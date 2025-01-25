@@ -8,20 +8,12 @@ repository = "https://github.com/OffchainLabs/stylus-hello-world"
 keywords = ["arbitrum", "ethereum", "stylus", "alloy"]
 description = "Stylus hello world example"
 
-
-
-
-
-
 [dependencies]
-stylus-sdk = "=0.7.0"
+stylus-sdk = { version = "0.7.0", default-features = false, features = ["mini-alloc"] }
 hex = "0.4.3"
 dotenv = "0.15.0"
-alloy-sol-types = "0.8.14"
-cfg-if = "1.0.0"
-derivative = "2.2.0"
-
-
+alloy-sol-types = { version = "=0.8.14", default-features = false }
+motsu = "0.3.0"
 
 [dev-dependencies]
 ethers = "2.0"
@@ -32,7 +24,7 @@ export-abi = ["stylus-sdk/export-abi"]
 debug = ["stylus-sdk/debug"]
 
 [[bin]]
-name = "stylus-arenaton"
+name = "stylus_vault"
 path = "src/main.rs"
 
 [lib]
